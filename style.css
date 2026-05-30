@@ -1,0 +1,32 @@
+.inbox{
+    background-color: antiquewhite;
+    min-height: 250px;
+    margin: 15px 0px;
+    padding: 15px;
+}
+
+.sec2{
+    background-color: cadetblue;
+    padding: 15px;
+    
+}
+
+.sec1{
+    background-color: aliceblue;
+    padding: 15px;
+
+}
+.innerbox{
+    background-color:wheat;
+    min-height:250px;
+    margin: 15px ;
+    padding: 15px;
+}
+ .section1{
+    background-color: floralwhite;
+    padding: 15px;
+ }
+ .section2{
+    background-color: grey;
+    padding: 15px;
+ }

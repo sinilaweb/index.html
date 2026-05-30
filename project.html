@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ROYAL ÉLITE</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#080808;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(12px);
+    }
+
+    .navbar-brand{
+      color:#d4af37 !important;
+      font-size:34px;
+      font-weight:700;
+      letter-spacing:3px;
+    }
+
+    .nav-link{
+      color:white !important;
+      margin-left:20px;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .nav-link::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:0%;
+      height:2px;
+      background:#d4af37;
+      transition:0.4s;
+    }
+
+    .nav-link:hover::after{
+      width:100%;
+    }
+
+    .nav-link:hover{
+      color:#d4af37 !important;
+    }
+
+    /* CAROUSEL */
+
+    .carousel-item{
+      height:100vh;
+      min-height:500px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(to right,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.3));
+    }
+
+    .carousel-caption{
+      bottom:28%;
+      text-align:left;
+      z-index:2;
+    }
+
+    .carousel-caption h1{
+      font-size:80px;
+      font-weight:700;
+      letter-spacing:3px;
+      animation:slideDown 1s ease;
+    }
+
+    .carousel-caption p{
+      max-width:600px;
+      font-size:20px;
+      margin:20px 0;
+      animation:slideUp 1s ease;
+    }
+
+    @keyframes slideDown{
+      from{
+        transform:translateY(-50px);
+        opacity:0;
+      }
+      to{
+        transform:translateY(0);
+        opacity:1;
+      }
+    }
+
+    @keyframes slideUp{
+      from{
+        transform:translateY(50px);
+        opacity:0;
+      }
+      to{
+        transform:translateY(0);
+        opacity:1;
+      }
+    }
+
+    .btn-gold{
+      background:#d4af37;
+      color:black;
+      border:none;
+      padding:14px 34px;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .btn-gold:hover{
+      background:white;
+      transform:translateY(-5px);
+    }
+
+    /* FLOATING CARD */
+
+    .floating-card{
+      background:#111;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:30px;
+      margin-top:-100px;
+      position:relative;
+      z-index:10;
+      box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .floating-card i{
+      color:#d4af37;
+      font-size:45px;
+    }
+
+    /* SECTION */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      color:#d4af37;
+      font-size:55px;
+      font-weight:700;
+    }
+
+    /* PRODUCT CARD */
+
+    .fashion-card{
+      background:#111;
+      border:none;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.5s;
+      box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .fashion-card:hover{
+      transform:translateY(-12px) scale(1.02);
+    }
+
+    .fashion-card img{
+      height:450px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .fashion-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .fashion-card .card-body{
+      padding:30px;
+    }
+
+    .price{
+      color:#d4af37;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    /* PARALLAX */
+
+    .parallax{
+      background:
+      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop')
+      center/cover fixed;
+
+      padding:150px 20px;
+      text-align:center;
+      border-radius:30px;
+    }
+
+    .parallax h1{
+      font-size:70px;
+      color:#d4af37;
+      font-weight:700;
+    }
+
+    /* TESTIMONIAL */
+
+    .testimonial{
+      background:#111;
+      border-radius:25px;
+      padding:40px;
+      transition:0.4s;
+      height:100%;
+    }
+
+    .testimonial:hover{
+      background:#1b1b1b;
+      transform:translateY(-10px);
+    }
+
+    .testimonial img{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #d4af37;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      padding:50px 0;
+      text-align:center;
+    }
+
+    footer i{
+      color:#d4af37;
+      font-size:25px;
+      margin:0 12px;
+      transition:0.3s;
+    }
+
+    footer i:hover{
+      color:white;
+      transform:translateY(-5px);
+    }
+
+    @media(max-width:768px){
+
+      .carousel-caption{
+        bottom:20%;
+      }
+
+      .carousel-caption h1{
+        font-size:42px;
+      }
+
+      .carousel-caption p{
+        font-size:16px;
+      }
+
+      .section-title h2{
+        font-size:36px;
+      }
+
+      .parallax h1{
+        font-size:38px;
+      }
+
+      .floating-card{
+        margin-top:20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      ROYAL ÉLITE
+    </a>
+
+    <button class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Luxury</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Collection</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reviews</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HERO CAROUSEL -->
+
+<div id="luxuryCarousel"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+
+    <div class="carousel-item active"
+         style="background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1600&auto=format&fit=crop')">
+
+      <div class="overlay"></div>
+
+      <div class="container">
+
+        <div class="carousel-caption">
+
+          <h1>LUXURY<br>FASHION</h1>
+
+          <p>
+            Discover world-class premium collections crafted
+            for elegance and modern lifestyle.
+          </p>
+
+          <button class="btn btn-gold">
+            Explore Collection
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Slide 2 -->
+
+    <div class="carousel-item"
+         style="background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1600&auto=format&fit=crop')">
+
+      <div class="overlay"></div>
+
+      <div class="container">
+
+        <div class="carousel-caption">
+
+          <h1>MODERN<br>STYLE</h1>
+
+          <p>
+            Elevate your fashion statement with timeless luxury.
+          </p>
+
+          <button class="btn btn-gold">
+            Shop Now
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Slide 3 -->
+
+    <div class="carousel-item"
+         style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop')">
+
+      <div class="overlay"></div>
+
+      <div class="container">
+
+        <div class="carousel-caption">
+
+          <h1>ROYAL<br>COLLECTION</h1>
+
+          <p>
+            Exclusive premium designs inspired by luxury brands.
+          </p>
+
+          <button class="btn btn-gold">
+            Discover More
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+
+  <button class="carousel-control-prev"
+          data-bs-target="#luxuryCarousel"
+          data-bs-slide="prev">
+
+    <span class="carousel-control-prev-icon"></span>
+
+  </button>
+
+  <button class="carousel-control-next"
+          data-bs-target="#luxuryCarousel"
+          data-bs-slide="next">
+
+    <span class="carousel-control-next-icon"></span>
+
+  </button>
+
+</div>
+
+<!-- FLOATING FEATURES -->
+
+<div class="container">
+
+  <div class="floating-card">
+
+    <div class="row text-center g-4">
+
+      <div class="col-md-4">
+
+        <i class="bi bi-gem"></i>
+
+        <h4 class="mt-3">Premium Quality</h4>
+
+        <p>Luxury materials with modern elegance.</p>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <i class="bi bi-stars"></i>
+
+        <h4 class="mt-3">Exclusive Design</h4>
+
+        <p>World-class fashion inspired collections.</p>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <i class="bi bi-award"></i>
+
+        <h4 class="mt-3">Luxury Brand</h4>
+
+        <p>Trusted premium fashion experience.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- COLLECTION -->
+
+<section class="py-5">
+
+  <div class="container py-5">
+
+    <div class="section-title">
+
+      <h2>Exclusive Collection</h2>
+
+      <p>Elegant fashion crafted for luxury lifestyle</p>
+
+    </div>
+
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+
+      <div class="col-lg-4">
+
+        <div class="card fashion-card">
+
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-body text-center">
+
+            <h3>Elegant Wear</h3>
+
+            <p>
+              Premium outfit with sophisticated design.
+            </p>
+
+            <div class="price">$399</div>
+
+            <button class="btn btn-gold mt-3">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="col-lg-4">
+
+        <div class="card fashion-card">
+
+          <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-body text-center">
+
+            <h3>Luxury Jacket</h3>
+
+            <p>
+              Modern premium style for elite fashion.
+            </p>
+
+            <div class="price">$550</div>
+
+            <button class="btn btn-gold mt-3">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="col-lg-4">
+
+        <div class="card fashion-card">
+
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-body text-center">
+
+            <h3>Designer Style</h3>
+
+            <p>
+              Timeless luxury with elegant craftsmanship.
+            </p>
+
+            <div class="price">$620</div>
+
+            <button class="btn btn-gold mt-3">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PARALLAX -->
+
+<section class="py-5">
+
+  <div class="container">
+
+    <div class="parallax">
+
+      <h1>SUMMER LUXURY SALE</h1>
+
+      <p class="mt-4 mb-4">
+        Up to 60% OFF on exclusive premium collections
+      </p>
+
+      <button class="btn btn-gold">
+        Explore Offers
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section class="py-5">
+
+  <div class="container py-5">
+
+    <div class="section-title">
+
+      <h2>Client Reviews</h2>
+
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+
+        <div class="testimonial text-center">
+
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+          <h4 class="mt-4">Sophia</h4>
+
+          <p>
+            “Absolutely stunning premium quality and luxury experience.”
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="testimonial text-center">
+
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+          <h4 class="mt-4">Daniel</h4>
+
+          <p>
+            “The best luxury fashion website and elegant collections.”
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="testimonial text-center">
+
+          <img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+          <h4 class="mt-4">Olivia</h4>
+
+          <p>
+            “Beautiful modern fashion with world-class styling.”
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <h2 class="text-warning">
+      ROYAL ÉLITE
+    </h2>
+
+    <p class="mt-3">
+      Premium fashion crafted for luxury lifestyle.
+    </p>
+
+    <div class="my-4">
+
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter-x"></i>
+      <i class="bi bi-youtube"></i>
+
+    </div>
+
+    <p>
+      © 2026 Royal Élite Fashion. All Rights Reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 
+</body>
+</html>
